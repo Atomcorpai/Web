@@ -19,9 +19,17 @@
       padding: 2rem;
       text-align: center;
     }
-    header img {
-      max-height: 80px;
+    header svg {
+      height: 80px;
       margin-bottom: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, stroke-width 0.2s ease;
+    }
+    header svg:hover {
+      transform: scale(1.1);
+    }
+    header svg:active circle {
+      stroke-width: 8;
     }
     main {
       max-width: 800px;
@@ -81,20 +89,24 @@
 </head>
 <body>
   <header>
-    <img src="placeholder-logo.png" alt="AtomCorp Logo">
+    <svg id="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="40" stroke="red" stroke-width="5" fill="blue" />
+      <line x1="30" y1="50" x2="70" y2="50" stroke="white" stroke-width="4" />
+      <line x1="50" y1="30" x2="50" y2="70" stroke="white" stroke-width="4" />
+    </svg>
     <h1>Partner With AtomCorp</h1>
-    <p>The power and performance to participate — powered by Intel.</p>
+    <p>Evolve with Us.</p>
   </header>
   <main>
     <p>
-      We’re building something new: plug-and-play GPU computing for students, builders, researchers, and everyday users who want to participate in AI without the hassle of building their own rigs.
+      We’re building something innovative: plug-and-play GPU computing for students, builders, researchers, and everyday users who want to participate in AI without the hassle and cost of building their own rigs.
     </p>
 
     <div class="product-image">[ Agent GPUC image placeholder ]</div>
 
     <div class="highlight">
-      <strong>We’re not asking for capital. Just the chance to resell Intel hardware directly.</strong><br>
-      No long-term contract. No risk to you. You keep full branding rights. You walk anytime.
+      <strong>We’re not here to disrupt your systems — we’re here to complement them.</strong><br>
+      AtomCorp is not looking for handouts or long-term contracts. We pose no risk to your operation. You keep 100% of your brand rights, inventory control, and margin protection. We simply want to earn our place as a reliable vendor focused on long-term alignment. Exit anytime. No hard feelings.
     </div>
 
     <h2>Exclusivity? Already built in.</h2>
@@ -115,12 +127,22 @@
       <li>First-to-market with modular eGPU-ready mini PCs</li>
     </ul>
 
-    <a href="mailto:adam.dolin@atomcorp.ai" class="cta">Schedule a Call</a>
+    <a href="mailto:adam@atomcorp.ai" class="cta">Schedule a Call</a>
   </main>
 
   <footer>
     &copy; 2025 AtomCorp. Built for participation.
   </footer>
+
+  <script>
+    const logo = document.getElementById("logo");
+    logo.addEventListener("click", () => {
+      const circle = logo.querySelector("circle");
+      const currentColor = circle.getAttribute("fill");
+      circle.setAttribute("fill", currentColor === "blue" ? "red" : "blue");
+    });
+  </script>
 </body>
 </html>
+
 
