@@ -1,168 +1,70 @@
 <!DOCTYPE html>
-<a href="Research_&_Development.html" style="color:white; margin-left: 1rem;">R&D</a>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AtomCorp | Evolve With Us</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AtomCorp – Modular AI hardware, designed for everyone."/>
+  <title>AtomCorp</title>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f4f4f4;
       color: #222;
     }
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 2rem;
+    .container {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       text-align: center;
-    }
-    header svg {
-      height: 80px;
-      margin-bottom: 1rem;
-      cursor: pointer;
-      transition: transform 0.3s ease, stroke-width 0.2s ease;
-    }
-    header svg:hover {
-      transform: scale(1.1);
-    }
-    header svg:active circle {
-      stroke-width: 8;
-    }
-    main {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-top: 2rem;
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
     p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin-bottom: 30px;
     }
-    ul {
-      padding-left: 1.2rem;
-    }
-    .highlight {
-      background: #e0f2fe;
-      padding: 1rem;
-      border-left: 4px solid #0ea5e9;
-      margin: 2rem 0;
-    }
-    .cta {
-      background: #0ea5e9;
-      color: white;
-      padding: 1rem 2rem;
-      text-align: center;
-      border-radius: 0.5rem;
-      text-decoration: none;
+    a.button {
       display: inline-block;
-      font-weight: 600;
-      margin-top: 2rem;
+      padding: 12px 24px;
+      background-color: #0059ff;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s ease;
     }
-    .product-image {
-      width: 100%;
-      max-width: 600px;
-      margin: 2rem auto;
-      display: block;
-      border: 2px dashed #ccc;
-      padding: 2rem;
-      text-align: center;
-      font-style: italic;
-      color: #888;
+    a.button:hover {
+      background-color: #003dcc;
     }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      padding: 2rem;
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #0059ff;
+      margin-bottom: 40px;
+      letter-spacing: -1px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .logo:hover {
+      transform: scale(1.05) rotate(-1deg);
     }
   </style>
 </head>
 <body>
-  <header>
-    <svg id="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="40" stroke="red" stroke-width="5" fill="blue" />
-      <line x1="30" y1="50" x2="70" y2="50" stroke="white" stroke-width="4" />
-      <line x1="50" y1="30" x2="50" y2="70" stroke="white" stroke-width="4" />
-    </svg>
-    <h1>AtomCorp</h1>
-    <p>Evolve with Us.</p>
-  </header>
-  <main>
-    <p>
-      We’re building something innovative: plug-and-play GPU computing for students, builders, researchers, and everyday users who want to participate in AI without the hassle and cost of building their own rigs.
-    </p>
-
-    <div class="product-image">
-  <img src="/assets/nuc-preview.png" alt="Agent GPUC Prototype" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" />
-  <p style="font-style: italic; color: #666; margin-top: 0.5rem;">Concept image based on Intel NUC chassis</p>
-</div>
-
-    <h2>Modular AI, Without the Tower</h2>
-    <p>
-      This is the configuration we’re building around. A compact PC like a NUC connects directly to a full-size GPU and PSU using a PCIe riser or Thunderbolt-to-eGPU adapter. It’s simple, quiet, scalable — and exactly what Agent GPUC is designed to deliver.
-    </p>
-    <div class="product-image">
-      <img src="/assets/nuc-to-gpu-example.png" alt="Modular GPU connection example" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
-      <p style="font-style: italic; color: #666; margin-top: 0.5rem;">NUC to external GPU setup, powered by standard SFX PSU</p>
-    </div>
-
-    <div class="highlight">
-      <strong>We’re not here to disrupt your systems — we’re here to complement them.</strong><br>
-      AtomCorp is not looking for handouts or long-term contracts. We pose no risk to your operation. You keep 100% of your brand rights, inventory control, and margin protection. We simply want to earn our place as a reliable vendor focused on long-term alignment. Exit anytime. No hard feelings.
-    </div>
-
-    <h2>Exclusivity? Already built in.</h2>
-    <p>
-      If you want to go public with this partnership, we’ll work exclusively with Intel for the life of the agreement. That means Intel gets the headline. AtomCorp runs only your GPU stack.
-    </p>
-
-    <h2>Co-Branding with TLDs</h2>
-    <p>
-      Want <code>.arc</code>, <code>.b60</code>, or <code>.intel</code> as part of your rollout? We’ll build a custom domain namespace for the contract term. You keep it afterward if you choose.
-    </p>
-
-    <h2>Why AtomCorp?</h2>
-
-    <h2>Extend Your Machine</h2>
-    <p>
-      Built on the same foundation as best-in-class Thunderbolt 4 docking stations, the Agent GPUC platform turns any capable laptop or mini PC into a modular AI workstation. Inspired by high-end productivity hubs like those featured in PCWorld’s “Best Thunderbolt docks 2025,” our system extends, rather than replaces, your existing compute footprint.
-    </p>
-    <div class="product-image">
-      <img src="/assets/razer-thunderbolt-dock.png" alt="Inspiration: Razer Thunderbolt Dock" style="max-width: 100%; border-radius: 0.5rem; box-shadow: 0 6px 12px rgba(0,0,0,0.2);" />
-      <p style="font-style: italic; color: #666; margin-top: 0.5rem;">Design inspiration from premium Thunderbolt docks</p>
-    </div>
-    <ul>
-      <li>NSF-funded founder pursuing an AI degree</li>
-      <li>Active development of AI-powered assistants</li>
-      <li>Live website, incorporation underway</li>
-      <li>First-to-market with modular eGPU-ready mini PCs</li>
-    </ul>
-
-    <a href="mailto:adam@atomcorp.ai" class="cta">Schedule a Call</a>
-  </main>
-
-  <footer>
-    &copy; 2025 AtomCorp. Built for participation.
-  </footer>
-
-  <script>
-    const logo = document.getElementById("logo");
-    logo.addEventListener("click", () => {
-      const circle = logo.querySelector("circle");
-      const currentColor = circle.getAttribute("fill");
-      circle.setAttribute("fill", currentColor === "blue" ? "red" : "blue");
-    });
-  </script>
+  <div class="container">
+    <div class="logo" onclick="alert('⚙️ AtomCorp: Power to the Builders')">ATOMCORP</div>
+    <h1>Modular AI Hardware for Everyone</h1>
+    <p>AtomCorp builds systems that cut through the noise—no overengineering, no bloat. Just clean, powerful, upgradeable machines for builders, researchers, and developers.</p>
+    <a href="/research-and-development/" class="button">Explore Research & Development</a>
+  </div>
 </body>
 </html>
+
