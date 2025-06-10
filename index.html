@@ -74,18 +74,26 @@
     <p>AtomCorp builds systems that cut through the noise—no overengineering, no bloat. Just clean, powerful, upgradeable machines for builders, researchers, and developers.</p>
     <a href="/research-and-development/" class="button">Explore Research & Development</a>
   </div>
-
+<canvas id="myCanvas" width="800" height="600" style="position:fixed;top:0;left:0;z-index:0;pointer-events:none;"></canvas>
   <!-- ZIM.js mascot script -->
   <script type="module">
     import zim from "https://zimjs.org/cdn/016/zim.js";
 
     const clickedBefore = localStorage.getItem("sherryDismissed");
 
-    new Frame(FIT, 800, 600, "#ffffff", "#000000", ready);
-
+   new Frame({
+  canvas: "myCanvas",
+  scaling: FIT,
+  width: 800,
+  height: 600,
+  color: "#ffffff",
+  outerColor: "#000000",
+  ready
+});
     function ready() {
       if (clickedBefore) return;
-
+         const stage = Frame.stage;    
+      
       const sherry = new Rectangle(200, 100, "#ff69b4", "#000")
         .pos(50, 50, LEFT, TOP)
         .drag()
