@@ -257,21 +257,79 @@
   const orb = document.getElementById("atom-orb");
   const awakened = localStorage.getItem("atomOrbAwakened") === "true";
 
-  if (awakened) orb.classList.add("awake");
+  let posX = window.innerWidth - 72;
+  let posY = window.innerHeight - 72;
+  let velX = 0;
+  let velY = 0;
+  let lastX, lastY;
+  let isDragging = false;
+  let bouncing = false;
+
+  orb.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    velX = 0;
+    velY = 0;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    posX += dx;
+    posY += dy;
+    orb.style.transform = `translate(${posX}px, ${posY}px)`;
+    velX = dx;
+    velY = dy;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    if (!bouncing) startBounce();
+  });
 
   orb.addEventListener("click", () => {
     orb.classList.add("awake");
     localStorage.setItem("atomOrbAwakened", "true");
+    if (!bouncing) startBounce();
   });
 
-  let followMouse = false;
-  document.addEventListener("mousemove", e => {
-    if (!orb.classList.contains("awake")) return;
-    const x = e.clientX;
-    const y = e.clientY;
-    orb.style.transform = `translate(${(x - window.innerWidth + 96)/20}px, ${(y - window.innerHeight + 96)/20}px)`;
-  });
-  
+  function startBounce() {
+    bouncing = true;
+
+    function bounceLoop() {
+      if (!isDragging) {
+        posX += velX;
+        posY += velY;
+
+        // Bounce off walls
+        if (posX <= 0 || posX + 48 >= window.innerWidth) velX *= -0.9;
+        if (posY <= 0 || posY + 48 >= window.innerHeight) velY *= -0.9;
+
+        // Clamp position
+        posX = Math.max(0, Math.min(posX, window.innerWidth - 48));
+        posY = Math.max(0, Math.min(posY, window.innerHeight - 48));
+
+        // Apply friction
+        velX *= 0.98;
+        velY *= 0.98;
+
+        orb.style.transform = `translate(${posX}px, ${posY}px)`;
+      }
+
+      requestAnimationFrame(bounceLoop);
+    }
+
+    bounceLoop();
+  }
+
+  if (awakened) {
+    orb.classList.add("awake");
+    startBounce();
+  }
 </script>
-
 </html>
