@@ -21,6 +21,8 @@
       border-radius: 12px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
     h1 {
       font-size: 3rem;
@@ -56,6 +58,13 @@
     .logo:hover {
       transform: scale(1.05) rotate(-1deg);
     }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
@@ -65,6 +74,49 @@
     <p>AtomCorp builds systems that cut through the noise—no overengineering, no bloat. Just clean, powerful, upgradeable machines for builders, researchers, and developers.</p>
     <a href="/research-and-development/" class="button">Explore Research & Development</a>
   </div>
+
+  <!-- ZIM.js mascot script -->
+  <script type="module">
+    import zim from "https://zimjs.org/cdn/016/zim.js";
+
+    const clickedBefore = localStorage.getItem("sherryDismissed");
+
+    new Frame(FIT, 800, 600, "#ffffff", "#000000", ready);
+
+    function ready() {
+      if (clickedBefore) return;
+
+      const sherry = new Rectangle(200, 100, "#ff69b4", "#000")
+        .pos(50, 50, LEFT, TOP)
+        .drag()
+        .alp(0.95)
+        .tap(() => {
+          sherry.text.text = "Fine. I’ll shut up now.";
+          sherry.animate({scale: 0.3, x: 20, y: 20}, 0.5, "backIn");
+          localStorage.setItem("sherryDismissed", "true");
+        });
+
+      sherry.text = new Label("I'm Sherry. You can't ignore me.").center(sherry);
+
+      loop([
+        "Did you know this site has secrets?",
+        "I was built in the basement of AtomCorp.",
+        "Click me. Or don’t. But I’ll be here.",
+        "Gumbino warned you about me."
+      ], 5000, text => {
+        if (!clickedBefore) sherry.text.text = text;
+      });
+
+      function loop(arr, interval, cb) {
+        let i = 0;
+        setInterval(() => {
+          cb(arr[i % arr.length]);
+          i++;
+        }, interval);
+      }
+
+      stage.update();
+    }
+  </script>
 </body>
 </html>
-
