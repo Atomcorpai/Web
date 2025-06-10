@@ -1,82 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AtomCorp Research & Development: advancing modular AI hardware for everyday users."/>
-  <title>Research & Development | AtomCorp</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f4f4f4;
-      color: #222;
-    }
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 40px;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-    }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .highlight {
-      color: #0059ff;
-      font-weight: 600;
-    }
-    .nav {
-      text-align: center;
-      margin-top: 30px;
-    }
-    .nav a {
-      color: #0059ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    @media (max-width: 600px) {
-      .container {
-        margin: 20px;
-        padding: 20px;
+<script>
+  const orb = document.getElementById("atom-orb");
+  const awakened = localStorage.getItem("atomOrbAwakened") === "true";
+
+  let posX = window.innerWidth - 72;
+  let posY = window.innerHeight - 72;
+  let velX = 0;
+  let velY = 0;
+  let lastX, lastY;
+  let isDragging = false;
+  let bouncing = false;
+
+  const bounceAudio = new Audio("https://freesound.org/data/previews/522/522942_11669893-lq.mp3"); // simple boop sound
+  bounceAudio.volume = 0.2;
+
+  orb.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    velX = 0;
+    velY = 0;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    posX += dx;
+    posY += dy;
+    orb.style.transform = `translate(${posX}px, ${posY}px)`;
+    velX = dx;
+    velY = dy;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    if (!bouncing) startBounce();
+  });
+
+  orb.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    velX = 0;
+    velY = 0;
+    const touch = e.touches[0];
+    lastX = touch.clientX;
+    lastY = touch.clientY;
+  });
+
+  document.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    const dx = touch.clientX - lastX;
+    const dy = touch.clientY - lastY;
+    posX += dx;
+    posY += dy;
+    orb.style.transform = `translate(${posX}px, ${posY}px)`;
+    velX = dx;
+    velY = dy;
+    lastX = touch.clientX;
+    lastY = touch.clientY;
+  });
+
+  document.addEventListener("touchend", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    if (!bouncing) startBounce();
+  });
+
+  orb.addEventListener("click", () => {
+    orb.classList.add("awake");
+    localStorage.setItem("atomOrbAwakened", "true");
+    if (!bouncing) startBounce();
+  });
+
+  function startBounce() {
+    bouncing = true;
+
+    function bounceLoop() {
+      if (!isDragging) {
+        posX += velX;
+        posY += velY;
+
+        // Bounce off walls with sound and squish effect
+        let bounced = false;
+        if (posX <= 0 || posX + 48 >= window.innerWidth) {
+          velX *= -0.9;
+          bounced = true;
+        }
+        if (posY <= 0 || posY + 48 >= window.innerHeight) {
+          velY *= -0.9;
+          bounced = true;
+        }
+        if (bounced) {
+          bounceAudio.currentTime = 0;
+          bounceAudio.play();
+          orb.animate([
+            { transform: `translate(${posX}px, ${posY}px) scale(1.2)` },
+            { transform: `translate(${posX}px, ${posY}px) scale(1)` }
+          ], { duration: 100, easing: "ease-out" });
+        }
+
+        // Clamp position
+        posX = Math.max(0, Math.min(posX, window.innerWidth - 48));
+        posY = Math.max(0, Math.min(posY, window.innerHeight - 48));
+
+        // Apply friction
+        velX *= 0.98;
+        velY *= 0.98;
+
+        orb.style.transform = `translate(${posX}px, ${posY}px)`;
       }
-      h1 {
-        font-size: 2rem;
-      }
+
+      requestAnimationFrame(bounceLoop);
     }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Research & Development</h1>
-    <p>
-      At <span class="highlight">AtomCorp</span>, our mission is to remove the barriers between everyday users and emerging AI technologies.
-    </p>
-    <p>
-      Backed by the <span class="highlight">National Science Foundation</span> and fueled by a formal education in AI, we’re building a platform that prioritizes real-world access, modularity, and performance.
-    </p>
-    <p>
-      Our R&D focuses on reducing system complexity while increasing compute density and user freedom. We aim to make plug-and-play AI workstations as common as smartphones—without sacrificing power, privacy, or control.
-    </p>
-    <p>
-      This is just the beginning. As we move from foundational products to fully integrated agent platforms, AtomCorp will remain rooted in one core belief: <strong>people’s time is worth money—and their machines should reflect that.</strong>
-    </p>
-    <div class="nav">
-      <a href="/">← Back to Homepage</a>
-    </div>
-  </div>
-</body>
-  <style>
+
+    bounceLoop();
+  }
+
+  if (awakened) {
+    orb.classList.add("awake");
+    startBounce();
+  }
+</script>
+<style>
   #atom-orb {
     position: fixed;
     bottom: 24px;
@@ -88,8 +136,9 @@
     box-shadow: 0 0 12px rgba(255, 0, 0, 0.5), 0 0 24px rgba(0, 0, 255, 0.4);
     z-index: 1000;
     cursor: pointer;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    transition: box-shadow 0.3s ease;
     pointer-events: auto;
+    will-change: transform;
   }
 
   #atom-orb.awake {
@@ -102,27 +151,4 @@
     50% { transform: translateY(-6px); }
   }
 </style>
-
 <div id="atom-orb" title="Evolve with us."></div>
-
-<script>
-  const orb = document.getElementById("atom-orb");
-  const awakened = localStorage.getItem("atomOrbAwakened") === "true";
-
-  if (awakened) orb.classList.add("awake");
-
-  orb.addEventListener("click", () => {
-    orb.classList.add("awake");
-    localStorage.setItem("atomOrbAwakened", "true");
-  });
-
-  let followMouse = false;
-  document.addEventListener("mousemove", e => {
-    if (!orb.classList.contains("awake")) return;
-    const x = e.clientX;
-    const y = e.clientY;
-    orb.style.transform = `translate(${(x - window.innerWidth + 96)/20}px, ${(y - window.innerHeight + 96)/20}px)`;
-  });
-</script>
-
-</html>
