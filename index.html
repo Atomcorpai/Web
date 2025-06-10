@@ -91,29 +91,48 @@
   ready
 });
     function ready() {
-      if (clickedBefore) return;
-         const stage = Frame.stage;    
-      
-      const sherry = new Rectangle(200, 100, "#ff69b4", "#000")
-        .pos(50, 50, LEFT, TOP)
-        .drag()
-        .alp(0.95)
-        .tap(() => {
-          sherry.text.text = "Fine. I’ll shut up now.";
-          sherry.animate({scale: 0.3, x: 20, y: 20}, 0.5, "backIn");
-          localStorage.setItem("sherryDismissed", "true");
-        });
+  if (clickedBefore) return;
+  const stage = Frame.stage;
 
-      sherry.text = new Label("I'm Sherry. You can't ignore me.").center(sherry);
+  let mood = 0;
 
-      loop([
-        "Did you know this site has secrets?",
-        "I was built in the basement of AtomCorp.",
-        "Click me. Or don’t. But I’ll be here.",
-        "Gumbino warned you about me."
-      ], 5000, text => {
-        if (!clickedBefore) sherry.text.text = text;
-      });
+  const sherry = new Rectangle(200, 100, "#ff69b4", "#000")
+    .pos(50, 50, LEFT, TOP)
+    .drag()
+    .alp(0.95)
+    .tap(() => {
+      mood++;
+      if (mood === 1) {
+        sherry.text.text = "Okay. That was a little rude.";
+      } else if (mood === 2) {
+        sherry.text.text = "Seriously?";
+      } else if (mood === 3) {
+        sherry.text.text = "Fine. Muting myself.";
+        sherry.animate({ scale: 0.3, x: 20, y: 20 }, 0.5, "backIn");
+        localStorage.setItem("sherryDismissed", "true");
+      }
+    });
+
+  sherry.text = new Label("I'm Sherry. You can't ignore me.").center(sherry);
+
+  loop([
+    "Did you know this site has secrets?",
+    "I was built in the basement of AtomCorp.",
+    "Click me. Or don’t. But I’ll be here.",
+    "Gumbino warned you about me."
+  ], 5000, text => {
+    if (!clickedBefore && mood < 3) {
+      sherry.text.text = text;
+    }
+  });
+
+  function loop(arr, interval, cb) {
+    let i = 0;
+    setInterval(() => cb(arr[i++ % arr.length]), interval);
+  }
+
+  stage.update();
+}
 
       function loop(arr, interval, cb) {
         let i = 0;
