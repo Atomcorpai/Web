@@ -1,0 +1,87 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a012e; /* Deep Purple */
+    color: #ffd700; /* Gold */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cosmic background with subtle dots */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, transparent, rgba(0,0,0,0.5)),
+                radial-gradient(ellipse at bottom, #300257, transparent),
+                url('assets/background-image.jpg');
+    background-size: 5px 5px, 100% 100%, 100% 100%, cover;
+    opacity: 0.8;
+}
+
+.container {
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    border: 2px solid #3c6e5e; /* Emerald Green */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 300px; /* Adjust as needed */
+    height: auto;
+}
+
+h1.mission-statement {
+    font-family: 'Clover Charm', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffd700; /* Gold */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+p.coming-soon {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffd700; /* Gold */
+    color: #1a012e; /* Deep Purple */
+    font-family: 'Clover Charm', sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid #ffd700;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
