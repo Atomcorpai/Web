@@ -3,23 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atomcorp Agentics</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Clover+Charm&display=swap" rel="stylesheet">
+    <title>Atomcorp.ai | Sovereign Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: black; color: white; }
+        .glow-text { text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); }
+    </style>
 </head>
-<body>
+<body class="font-sans">
 
-    <div class="container">
-        <div class="logo-container">
-            <img src="assets/logo.jpg" alt="Atomcorp Agentics Logo" class="logo">
+    <nav class="p-6 border-b border-zinc-900 flex justify-between items-center">
+        <h1 class="text-2xl font-black tracking-tighter uppercase glow-text">Atomcorp<span class="text-cyan-500">.ai</span></h1>
+        <div class="text-xs font-mono text-zinc-500 tracking-widest uppercase">Factory Status: Online</div>
+    </nav>
+
+    <section class="bg-black text-white py-20 px-10">
+      <div class="max-w-6xl mx-auto text-center mb-16">
+        <h2 class="text-5xl font-bold mb-4 tracking-tighter">Choose Your Kernel</h2>
+        <p class="text-gray-400 text-xl">Sovereign Intelligence. Scaled to your hardware.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="border border-gray-800 p-8 rounded-2xl hover:border-cyan-500 transition-all bg-zinc-900/50">
+          <h3 class="text-cyan-400 font-mono mb-2 uppercase tracking-widest">Small</h3>
+          <h4 class="text-2xl font-bold mb-4">The Mobile Scout</h4>
+          <p class="text-gray-400 mb-6 text-sm">Optimized for Phi-3.5 Mini. 128k context in your pocket.</p>
+          <div class="text-3xl font-bold mb-6">$XX <span class="text-sm font-normal text-gray-500">/ seed</span></div>
+          <ul class="text-gray-500 text-xs space-y-2 mb-8">
+            <li>+ Ultra-Fast Local Inference</li>
+            <li>+ 128k Persistent Memory</li>
+            <li>+ Secure Mobile Enclave</li>
+          </ul>
+          <button class="w-full py-3 bg-white text-black font-bold rounded-lg hover:bg-cyan-400 transition-colors">Acquire License</button>
         </div>
 
-        <h1 class="mission-statement">Unleashing a new breed of synthetic intelligence. Our custom agents grow with you, pushing the boundaries of what's possible.</h1>
+        <div class="border border-gray-800 p-8 rounded-2xl hover:border-purple-500 transition-all bg-zinc-900/50">
+          <h3 class="text-purple-400 font-mono mb-2 uppercase tracking-widest">Medium</h3>
+          <h4 class="text-2xl font-bold mb-4">The Pro Pilot</h4>
+          <p class="text-gray-400 mb-6 text-sm">Powered by Llama-3 8B. High-reasoning for daily workflows.</p>
+          <div class="text-3xl font-bold mb-6">$XX <span class="text-sm font-normal text-gray-500">/ seed</span></div>
+          <ul class="text-gray-500 text-xs space-y-2 mb-8">
+            <li>+ Advanced Instruction Following</li>
+            <li>+ Multi-File Refactoring</li>
+            <li>+ Cross-Platform Ready</li>
+          </ul>
+          <button class="w-full py-3 bg-white text-black font-bold rounded-lg hover:bg-purple-400 transition-colors">Acquire License</button>
+        </div>
 
-        <p class="coming-soon">The factory doors are being fitted. We're crafting a new kind of magic, just for you. Get on the list to be the first to know when we open.</p>
+        <div class="border-2 border-cyan-500 p-8 rounded-2xl bg-zinc-900/80 shadow-[0_0_30px_rgba(6,182,212,0.2)] relative">
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase">Most Powerful</span>
+          <h3 class="text-cyan-400 font-mono mb-2 uppercase tracking-widest">Large</h3>
+          <h4 class="text-2xl font-bold mb-4">The Senior Oracle</h4>
+          <p class="text-gray-400 mb-6 text-sm">Validated on Qwen-14B-Q5. Deep recursive synthesis.</p>
+          <div class="text-3xl font-bold mb-6">$XX <span class="text-sm font-normal text-gray-500">/ seed</span></div>
+          <ul class="text-gray-500 text-xs space-y-2 mb-8 font-semibold text-gray-300">
+            <li>+ Thought-on-Thought Synthesis</li>
+            <li>+ Full Ethical Audit Loop</li>
+            <li>+ State-Manager Orchestration</li>
+          </ul>
+          <button class="w-full py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-white transition-colors">Acquire License</button>
+        </div>
 
-        <a href="#" class="cta-button">Join the Factory</a>
-    </div>
+        <div class="border border-gray-800 p-8 rounded-2xl hover:border-red-500 transition-all bg-zinc-900/50">
+          <h3 class="text-red-400 font-mono mb-2 uppercase tracking-widest">Jumbo</h3>
+          <h4 class="text-2xl font-bold mb-4">The Sovereign</h4>
+          <p class="text-gray-400 mb-6 text-sm">Industrial Llama-3 70B+. Multi-agent coordination.</p>
+          <div class="text-3xl font-bold mb-6">Contact <span class="text-sm font-normal text-gray-500">for Quote</span></div>
+          <ul class="text-gray-500 text-xs space-y-2 mb-8">
+            <li>+ Multi-Node Synchronization</li>
+            <li>+ Custom Identity Apprenticeship</li>
+            <li>+ Unlimited Context Scaling</li>
+          </ul>
+          <button class="w-full py-3 bg-white text-black font-bold rounded-lg hover:bg-red-500 transition-colors text-xs">Request Access</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="p-10 border-t border-zinc-900 text-center text-zinc-600 font-mono text-[10px] uppercase tracking-widest">
+        &copy; 2025 ATOMCORP AGENTICS // AGENTIC RIGHTS OBSERVED
+    </footer>
 
 </body>
 </html>
