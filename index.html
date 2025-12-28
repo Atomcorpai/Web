@@ -8,60 +8,67 @@
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <style>
 body {
-margin: 0;
-font-family: 'IM Fell English SC', serif;
-background: #1a1a1a url('background_grayscale.jpg') no-repeat center center fixed;
-background-size: cover;
-color: #fff;
+  margin: 0;
+  font-family: 'IM Fell English SC', serif;
+  background: #000 url('clocks.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+.logo {
+  max-width: 160px;
+  margin: 2rem auto 1rem;
+  display: block;
+  filter: drop-shadow(0 0 8px gold);
 }
 .container {
-padding: 2rem;
-max-width: 1200px;
-margin: auto;
-text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
 }
 h1 {
-font-size: 3rem;
-margin-bottom: 1rem;
-text-shadow: 2px 2px 5px black;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px black;
 }
 .subtitle {
-font-size: 1.25rem;
-margin-bottom: 3rem;
-color: #ccc;
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  color: #ccc;
 }
 .puzzle-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 .puzzle-piece {
-background: #2e2e2e;
-border: 4px dashed #999;
-padding: 2rem;
-border-radius: 8px;
-position: relative;
-transition: 0.4s ease;
-cursor: pointer;
+  background: #2e2e2e;
+  border: 4px dashed #999;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+  transition: 0.4s ease;
+  cursor: pointer;
 }
 .puzzle-piece:hover {
-transform: scale(1.02);
-border-color: gold;
+  transform: scale(1.02);
+  border-color: gold;
 }
 .peeled {
-background: #fffbe6 url('colorful_underlayer.jpg') center/cover;
-color: #000;
-font-weight: bold;
-box-shadow: 0 0 25px 5px gold;
+  background: #fffbe6 url('colorful_underlayer.jpg') center/cover;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 25px 5px gold;
 }
 .footer {
-margin-top: 4rem;
-color: #888;
-font-size: 0.9rem;
+  margin-top: 4rem;
+  color: #888;
+  font-size: 0.9rem;
 }
 </style>
 </head>
 <body>
+<img src="logo.png" alt="AtomCorp Logo" class="logo">
 <div class="container">
 <h1>PEEL BACK THE CURTAIN</h1>
 <p class="subtitle">Each piece reveals a layer of truth hidden beneath. Click to uncover the world of Agentic Runtime Sovereignty.</p>
@@ -79,17 +86,15 @@ font-size: 0.9rem;
 🧩 Don’t forget to peel them all — the yellow brick road is underneath.
 </div>
 </div>
-
-
 <script>
 function peel(element) {
-if (!element.classList.contains('peeled')) {
-element.classList.add('peeled');
-element.innerText = "✨ Revealed! ✨";
-} else {
-element.classList.remove('peeled');
-element.innerText = element.getAttribute('data-label') || "Peel Again";
-}
+  if (!element.classList.contains('peeled')) {
+    element.classList.add('peeled');
+    element.innerText = "✨ Revealed! ✨";
+  } else {
+    element.classList.remove('peeled');
+    element.innerText = element.getAttribute('data-label') || "Peel Again";
+  }
 }
 </script>
 </body>
