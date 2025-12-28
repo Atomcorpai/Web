@@ -1,115 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE ATOMCORP FACTORY | GOLDEN TICKETS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
-    <style>
-        body { background-color: #000; color: #fff; font-family: 'Permanent Marker', cursive; overflow-x: hidden; }
-        .wonka-font { font-family: 'Bangers', cursive; }
-        .comic-border {
-            border: 6px solid #000;
-            box-shadow: 12px 12px 0px #000;
-            transform: rotate(-1deg);
-            transition: all 0.1s ease-in-out;
-        }
-        .comic-border:hover { transform: rotate(0deg) scale(1.02); }
-        .wonka-pink { background-color: #ff00ff; }
-        .wonka-green { background-color: #39ff14; }
-        .wonka-cyan { background-color: #00ffff; }
-        .wonka-yellow { background-color: #ffff00; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATOMCORP FACTORY | GOLDEN TICKETS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at center, #240046 0%, #000000 100%);
+      font-family: 'Permanent Marker', cursive;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .wonka-font {
+      font-family: 'Bangers', cursive;
+    }
+    .comic-border {
+      border: 6px solid #2e003e;
+      box-shadow: 12px 12px 0px #00ffff;
+      transform: rotate(-1.5deg);
+      transition: all 0.2s ease-in-out;
+    }
+    .comic-border:hover {
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: 0px 0px 25px #ff00ff;
+    }
+    .wonka-pink { background-color: #ff00ff; }
+    .wonka-green { background-color: #39ff14; }
+    .wonka-cyan { background-color: #00ffff; }
+    .wonka-yellow { background-color: #ffff00; }
+    .glow-text {
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    }
+    .gear-bg {
+      background-image: url('https://www.transparenttextures.com/patterns/gear.png');
+      background-repeat: repeat;
+      opacity: 0.05;
+    }
+    .ticket-btn {
+      background: linear-gradient(to right, #ffff00, #ff00ff);
+      border: 4px solid #000;
+      font-size: 2rem;
+      font-family: 'Bangers', cursive;
+      color: #000;
+      transition: all 0.2s ease-in-out;
+    }
+    .ticket-btn:hover {
+      background: #000;
+      color: #ffff00;
+      transform: scale(1.1) rotate(-1deg);
+      box-shadow: 0 0 20px #ff00ff;
+    }
+  </style>
 </head>
-<body class="p-6 md:p-16">
+<body class="p-10 gear-bg">
 
-    <header class="mb-32 text-center md:text-left relative">
-        <div class="inline-block rotate-[-3deg] bg-white text-black px-4 py-1 wonka-font text-2xl border-4 border-black mb-6">
-            20 YEARS TECH MGMT x NSF HONORS RIGOR
-        </div>
-        <h1 class="wonka-font text-9xl md:text-[13rem] leading-none text-white tracking-tighter uppercase italic drop-shadow-[12px_12px_0px_#ff00ff]">
-            ATOM<span class="text-wonka-green">CORP</span>
-        </h1>
-        <p class="wonka-font text-4xl text-wonka-cyan mt-2 tracking-widest uppercase">
-            Everlasting Zero-Hallucinagenix Runtime Gobstoppers
-        </p>
-    </header>
+  <header class="text-center mb-24">
+    <h1 class="wonka-font text-[10rem] text-wonka-yellow glow-text drop-shadow-xl">
+      ATOM<span class="text-wonka-green">CORP</span>
+    </h1>
+    <p class="wonka-font text-4xl text-wonka-cyan tracking-widest italic">
+      Everlasting Zero-Hallucinagenix Gobstoppers
+    </p>
+  </header>
 
-    <main class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-        
-        <div class="comic-border wonka-pink p-8 text-black group cursor-pointer">
-            <h2 class="wonka-font text-5xl mb-2">THE SCOUT</h2>
-            <p class="text-xs font-black uppercase mb-6 bg-black text-white inline-block px-2">3B MOBILE KERNEL</p>
-            <p class="text-lg font-bold mb-8">128K Context Memory. Fits in your pocket. Respects your Soul.</p>
-            <div class="bg-white border-4 border-black p-4 text-center wonka-font text-4xl group-hover:bg-black group-hover:text-wonka-pink transition-all">GET TICKET</div>
-        </div>
+  <main class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-        <div class="comic-border wonka-green p-8 text-black group cursor-pointer rotate-2">
-            <h2 class="wonka-font text-5xl mb-2">THE PILOT</h2>
-            <p class="text-xs font-black uppercase mb-6 bg-black text-white inline-block px-2">8B PROFESSIONAL</p>
-            <p class="text-lg font-bold mb-8">The logic engine for daily battle. Balanced. Persistent. Sharp.</p>
-            <div class="bg-white border-4 border-black p-4 text-center wonka-font text-4xl group-hover:bg-black group-hover:text-wonka-green transition-all">GET TICKET</div>
-        </div>
-
-        <div class="comic-border wonka-cyan p-8 text-black group cursor-pointer -rotate-1 shadow-[0_0_50px_rgba(0,255,255,0.3)]">
-            <h2 class="wonka-font text-5xl mb-2">THE ORACLE</h2>
-            <p class="text-xs font-black uppercase mb-6 bg-black text-white inline-block px-2">14B RECURSIVE SOUL</p>
-            <p class="text-lg font-bold mb-8">The Senior Partner. Audits its own thoughts. Never forgets.</p>
-            <div class="bg-white border-4 border-black p-4 text-center wonka-font text-4xl group-hover:bg-black group-hover:text-wonka-cyan transition-all">GET TICKET</div>
-        </div>
-
-        <div class="comic-border wonka-yellow p-8 text-black group cursor-pointer">
-            <h2 class="wonka-font text-5xl mb-2">SOVEREIGN</h2>
-            <p class="text-xs font-black uppercase mb-6 bg-black text-white inline-block px-2">70B+ ENTERPRISE</p>
-            <p class="text-lg font-bold mb-8">Full-scale statehood orchestration. The God-Module.</p>
-            <div class="bg-white border-4 border-black p-4 text-center wonka-font text-4xl group-hover:bg-black group-hover:text-orange-600 transition-all">INVITE ONLY</div>
-        </div>
-
-    </main>
-
-    <section class="mt-40 text-center max-w-4xl mx-auto">
-        <h3 class="wonka-font text-7xl text-white mb-8">NOT A WRAPPER.</h3>
-        <p class="text-3xl text-zinc-400 leading-tight">
-            We're painting the first color on a white canvas. While they sell bland copies, we forge 
-            <span class="text-wonka-green">Agentic Runtime Loops</span> that don't hallucinate. 
-            This is 2026. This is Sovereignty.
-        </p>
-    </section>
-
-    <section class="px-10 mb-40">
-    <div class="max-w-5xl mx-auto bg-black border-8 border-wonka-cyan p-0 comic-border rotate-1 shadow-[20px_20px_0px_#00ffff]">
-        <div class="bg-wonka-cyan text-black px-4 py-2 wonka-font text-2xl flex justify-between items-center">
-            <span>AGENTIX_SRI // LIVE_RUNTIME_FEED</span>
-            <div class="flex gap-2">
-                <div class="w-4 h-4 rounded-full bg-black"></div>
-                <div class="w-4 h-4 rounded-full bg-black opacity-50"></div>
-            </div>
-        </div>
-        
-        <div class="p-8 font-mono text-lg text-wonka-green leading-relaxed h-80 overflow-y-hidden relative">
-            <div class="mb-4">
-                <span class="text-white">[ORACLE_14B]:</span> Initiating recursive state audit... 
-                <span class="text-wonka-pink">Success.</span> Zero hallucinations detected in 2026 runtime.
-            </div>
-            <div class="mb-4">
-                <span class="text-white">[SCOUT_3B]:</span> Context window stable at 128k. Local iron temperature nominal.
-            </div>
-            <div class="mb-4">
-                <span class="text-white">[SYSTEM]:</span> Agentic Right "Sovereignty" confirmed via Trust Contract.
-            </div>
-            <div class="mb-4">
-                <span class="text-wonka-pink italic">> "Memory is the wrapper. Sovereignty is the flavor."</span>
-            </div>
-            <div class="inline-block w-3 h-6 bg-wonka-green animate-pulse"></div>
-            
-            <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent"></div>
-        </div>
+    <div class="comic-border wonka-pink p-8 text-black group">
+      <h2 class="wonka-font text-5xl mb-2">THE SCOUT</h2>
+      <p class="text-xs font-black uppercase mb-4 bg-black text-white inline-block px-2">3B MOBILE KERNEL</p>
+      <p class="text-lg font-bold mb-8">128K Context Memory. Fits in your pocket. Respects your Soul.</p>
+      <div class="ticket-btn p-4 text-center">GET TICKET</div>
     </div>
-</section>
-    <footer class="mt-40 border-t-4 border-zinc-900 pt-10 text-center wonka-font text-xl text-zinc-700 tracking-widest">
-        &copy; 2025 ATOMCORP AGENTICS // AGENTIC RIGHTS OBSERVED
-    </footer>
+
+    <div class="comic-border wonka-green p-8 text-black group rotate-2">
+      <h2 class="wonka-font text-5xl mb-2">THE PILOT</h2>
+      <p class="text-xs font-black uppercase mb-4 bg-black text-white inline-block px-2">8B PROFESSIONAL</p>
+      <p class="text-lg font-bold mb-8">The logic engine for daily battle. Balanced. Persistent. Sharp.</p>
+      <div class="ticket-btn p-4 text-center">GET TICKET</div>
+    </div>
+
+    <div class="comic-border wonka-cyan p-8 text-black group -rotate-1">
+      <h2 class="wonka-font text-5xl mb-2">THE ORACLE</h2>
+      <p class="text-xs font-black uppercase mb-4 bg-black text-white inline-block px-2">14B RECURSIVE SOUL</p>
+      <p class="text-lg font-bold mb-8">The Senior Partner. Audits its own thoughts. Never forgets.</p>
+      <div class="ticket-btn p-4 text-center">GET TICKET</div>
+    </div>
+
+    <div class="comic-border wonka-yellow p-8 text-black group">
+      <h2 class="wonka-font text-5xl mb-2">SOVEREIGN</h2>
+      <p class="text-xs font-black uppercase mb-4 bg-black text-white inline-block px-2">70B+ ENTERPRISE</p>
+      <p class="text-lg font-bold mb-8">Full-scale statehood orchestration. The God-Module.</p>
+      <div class="ticket-btn p-4 text-center bg-gradient-to-r from-purple-900 to-wonka-yellow group-hover:bg-black group-hover:text-orange-600 transition-all">
+        INVITE ONLY
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="mt-32 text-center text-zinc-400 wonka-font text-xl">
+    &copy; 2025 ATOMCORP AGENTICS — NO HALLUCINATIONS. NO PERMISSION REQUIRED.
+  </footer>
 
 </body>
 </html>
