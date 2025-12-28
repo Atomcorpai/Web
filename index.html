@@ -1,109 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ATOMCORP FACTORY | GOLDEN TICKETS</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: radial-gradient(circle at center, #240046 0%, #000000 100%);
-      font-family: 'Permanent Marker', cursive;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    .wonka-font {
-      font-family: 'Bangers', cursive;
-    }
-    .comic-border {
-      border: 6px solid #2e003e;
-      box-shadow: 12px 12px 0px #00ffff;
-      transform: rotate(-1.5deg);
-      transition: all 0.2s ease-in-out;
-    }
-    .comic-border:hover {
-      transform: rotate(0deg) scale(1.05);
-      box-shadow: 0px 0px 25px #ff00ff;
-    }
-    .wonka-pink { background-color: #ff00ff; }
-    .wonka-green { background-color: #39ff14; }
-    .wonka-cyan { background-color: #00ffff; }
-    .wonka-yellow { background-color: #ffff00; }
-    .glow-text {
-      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-    }
-    .gear-bg {
-      background-image: url('https://www.transparenttextures.com/patterns/gear.png');
-      background-repeat: repeat;
-      opacity: 0.05;
-    }
-    .ticket-btn {
-      background: linear-gradient(to right, #ffff00, #ff00ff);
-      border: 4px solid #000;
-      font-size: 2rem;
-      font-family: 'Bangers', cursive;
-      color: #000;
-      transition: all 0.2s ease-in-out;
-    }
-    .ticket-btn:hover {
-      background: #000;
-      color: #ffff00;
-      transform: scale(1.1) rotate(-1deg);
-      box-shadow: 0 0 20px #ff00ff;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+body {
+background-color: #000;
+color: #fff;
+font-family: 'Permanent Marker', cursive;
+}
+.wonka-font {
+font-family: 'Bangers', cursive;
+}
+.wonka-button {
+border: 5px solid #fff;
+background-color: #ff00ff;
+color: black;
+font-weight: bold;
+padding: 1.5rem;
+font-size: 1.5rem;
+transition: all 0.2s ease-in-out;
+transform: scale(1) rotate(-1deg);
+}
+.wonka-button:hover {
+background-color: black;
+color: #ff00ff;
+transform: scale(1.05) rotate(0deg);
+box-shadow: 6px 6px 0px #ff00ff;
+}
+.stay-out {
+background-color: #444;
+color: #999;
+border: 5px dashed #999;
+cursor: not-allowed;
+}
+.stay-out:hover {
+transform: none;
+box-shadow: none;
+color: #aaa;
+}
+</style>
 </head>
-<body class="p-10 gear-bg">
+<body class="p-10">
+<div class="text-center mb-16">
+<h1 class="text-6xl wonka-font text-wonka-green drop-shadow-[4px_4px_0px_#ff00ff]">Golden Model Tickets</h1>
+<p class="text-2xl text-wonka-cyan mt-4">Select your runtime flavor below</p>
+</div>
 
-  <header class="text-center mb-24">
-    <h1 class="wonka-font text-[10rem] text-wonka-yellow glow-text drop-shadow-xl">
-      ATOM<span class="text-wonka-green">CORP</span>
-    </h1>
-    <p class="wonka-font text-4xl text-wonka-cyan tracking-widest italic">
-      Everlasting Zero-Hallucinagenix Gobstoppers
-    </p>
-  </header>
 
-  <main class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="grid md:grid-cols-4 gap-10 max-w-7xl mx-auto">
 
-    <div class="comic-border wonka-pink p-8 text-black group">
-      <h2 class="wonka-font text-5xl mb-2">THE SCOUT</h2>
-      <p class="text-xs font-black uppercase mb-4 bg-black text-white inline-block px-2">3B MOBILE KERNEL</p>
-      <p class="text-lg font-bold mb-8">128K Context Memory. Fits in your pocket. Respects your Soul.</p>
-      <div class="ticket-btn p-4 text-center">GET TICKET</div>
-    </div>
 
-    <div class="comic-border wonka-green p-8 text-black group rotate-2">
-      <h2 class="wonka-font text-5xl mb-2">THE PILOT</h2>
-      <p class="text-xs font-black uppercase mb-4 bg-black text-white inline-block px-2">8B PROFESSIONAL</p>
-      <p class="text-lg font-bold mb-8">The logic engine for daily battle. Balanced. Persistent. Sharp.</p>
-      <div class="ticket-btn p-4 text-center">GET TICKET</div>
-    </div>
+<!-- Entry-Level 3B Button -->
+<button class="wonka-button comic-border">
+BubblePop Mini-B3<br />
+<span class="text-sm block mt-2">Ultra-portable & cheeky. 128K burst mode.</span>
+</button>
 
-    <div class="comic-border wonka-cyan p-8 text-black group -rotate-1">
-      <h2 class="wonka-font text-5xl mb-2">THE ORACLE</h2>
-      <p class="text-xs font-black uppercase mb-4 bg-black text-white inline-block px-2">14B RECURSIVE SOUL</p>
-      <p class="text-lg font-bold mb-8">The Senior Partner. Audits its own thoughts. Never forgets.</p>
-      <div class="ticket-btn p-4 text-center">GET TICKET</div>
-    </div>
 
-    <div class="comic-border wonka-yellow p-8 text-black group">
-      <h2 class="wonka-font text-5xl mb-2">SOVEREIGN</h2>
-      <p class="text-xs font-black uppercase mb-4 bg-black text-white inline-block px-2">70B+ ENTERPRISE</p>
-      <p class="text-lg font-bold mb-8">Full-scale statehood orchestration. The God-Module.</p>
-      <div class="ticket-btn p-4 text-center bg-gradient-to-r from-purple-900 to-wonka-yellow group-hover:bg-black group-hover:text-orange-600 transition-all">
-        INVITE ONLY
-      </div>
-    </div>
+<!-- 7B Button -->
+<button class="wonka-button comic-border">
+Three Course Gumbo-7B<br />
+<span class="text-sm block mt-2">Multimodal. Multiverse. Neverstopping Goblaster.</span>
+</button>
 
-  </main>
 
-  <footer class="mt-32 text-center text-zinc-400 wonka-font text-xl">
-    &copy; 2025 ATOMCORP AGENTICS — NO HALLUCINATIONS. NO PERMISSION REQUIRED.
-  </footer>
+<!-- Custom Size Button -->
+<button class="wonka-button comic-border">
+Abacus Armadillo-14B<br />
+<span class="text-sm block mt-2">XL RAGs, llama.cpp, and Agentic Gloop 20B</span>
+</button>
 
+
+<!-- RAG Upgrade (Locked) -->
+<button class="wonka-button stay-out">
+Lifty Phizzer — Custom RAG Upgrade<br />
+<span class="text-sm block mt-2">🚫 Stay Out. This SKU requires deeper access.</span>
+</button>
+
+
+</div>
 </body>
 </html>
