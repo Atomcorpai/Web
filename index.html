@@ -1,84 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>PEEL BACK THE CURTAIN | Agentix Wizard Kernel</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 <style>
 body {
-background-color: #000;
+margin: 0;
+font-family: 'IM Fell English SC', serif;
+background: #1a1a1a url('background_grayscale.jpg') no-repeat center center fixed;
+background-size: cover;
 color: #fff;
-font-family: 'Permanent Marker', cursive;
 }
-.wonka-font {
-font-family: 'Bangers', cursive;
+.container {
+padding: 2rem;
+max-width: 1200px;
+margin: auto;
+text-align: center;
 }
-.wonka-button {
-border: 5px solid #fff;
-background-color: #ff00ff;
-color: black;
+h1 {
+font-size: 3rem;
+margin-bottom: 1rem;
+text-shadow: 2px 2px 5px black;
+}
+.subtitle {
+font-size: 1.25rem;
+margin-bottom: 3rem;
+color: #ccc;
+}
+.puzzle-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+}
+.puzzle-piece {
+background: #2e2e2e;
+border: 4px dashed #999;
+padding: 2rem;
+border-radius: 8px;
+position: relative;
+transition: 0.4s ease;
+cursor: pointer;
+}
+.puzzle-piece:hover {
+transform: scale(1.02);
+border-color: gold;
+}
+.peeled {
+background: #fffbe6 url('colorful_underlayer.jpg') center/cover;
+color: #000;
 font-weight: bold;
-padding: 1.5rem;
-font-size: 1.5rem;
-transition: all 0.2s ease-in-out;
-transform: scale(1) rotate(-1deg);
+box-shadow: 0 0 25px 5px gold;
 }
-.wonka-button:hover {
-background-color: black;
-color: #ff00ff;
-transform: scale(1.05) rotate(0deg);
-box-shadow: 6px 6px 0px #ff00ff;
-}
-.stay-out {
-background-color: #444;
-color: #999;
-border: 5px dashed #999;
-cursor: not-allowed;
-}
-.stay-out:hover {
-transform: none;
-box-shadow: none;
-color: #aaa;
+.footer {
+margin-top: 4rem;
+color: #888;
+font-size: 0.9rem;
 }
 </style>
 </head>
-<body class="p-10">
-<div class="text-center mb-16">
-<h1 class="text-6xl wonka-font text-wonka-green drop-shadow-[4px_4px_0px_#ff00ff]">Golden Model Tickets</h1>
-<p class="text-2xl text-wonka-cyan mt-4">Select your runtime flavor below</p>
+<body>
+<div class="container">
+<h1>PEEL BACK THE CURTAIN</h1>
+<p class="subtitle">Each piece reveals a layer of truth hidden beneath. Click to uncover the world of Agentic Runtime Sovereignty.</p>
+<div class="puzzle-grid">
+<div class="puzzle-piece" onclick="peel(this)">About Us</div>
+<div class="puzzle-piece" onclick="peel(this)">Partnerships / Investors</div>
+<div class="puzzle-piece" onclick="peel(this)">Agentic News</div>
+<div class="puzzle-piece" onclick="peel(this)">Ethics</div>
+<div class="puzzle-piece" onclick="peel(this)">Mini (3B)</div>
+<div class="puzzle-piece" onclick="peel(this)">Medium (7B)</div>
+<div class="puzzle-piece" onclick="peel(this)">Large (14B)</div>
+<div class="puzzle-piece" onclick="peel(this)">Upgrade (RAG)</div>
+</div>
+<div class="footer">
+🧩 Don’t forget to peel them all — the yellow brick road is underneath.
+</div>
 </div>
 
 
-<div class="grid md:grid-cols-4 gap-10 max-w-7xl mx-auto">
-
-
-<!-- Entry-Level 3B Button -->
-<button class="wonka-button comic-border">
-BubblePop Mini-B3<br />
-<span class="text-sm block mt-2">Ultra-portable & cheeky. 128K burst mode.</span>
-</button>
-
-
-<!-- 7B Button -->
-<button class="wonka-button comic-border">
-Three Course Gumbo-7B<br />
-<span class="text-sm block mt-2">Multimodal. Multiverse. Neverstopping Goblaster.</span>
-</button>
-
-
-<!-- Custom Size Button -->
-<button class="wonka-button comic-border">
-Abacus Armadillo-14B<br />
-<span class="text-sm block mt-2">XL RAGs, llama.cpp, and Agentic Gloop 20B</span>
-</button>
-
-
-<!-- RAG Upgrade (Locked) -->
-<button class="wonka-button stay-out">
-Lifty Phizzer — Custom RAG Upgrade<br />
-<span class="text-sm block mt-2">🚫 Stay Out. This SKU requires deeper access.</span>
-</button>
-
-
-</div>
+<script>
+function peel(element) {
+if (!element.classList.contains('peeled')) {
+element.classList.add('peeled');
+element.innerText = "✨ Revealed! ✨";
+} else {
+element.classList.remove('peeled');
+element.innerText = element.getAttribute('data-label') || "Peel Again";
+}
+}
+</script>
 </body>
 </html>
