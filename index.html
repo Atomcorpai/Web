@@ -1,84 +1,42 @@
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
-<style>
-body {
-background-color: #000;
-color: #fff;
-font-family: 'Permanent Marker', cursive;
-}
-.wonka-font {
-font-family: 'Bangers', cursive;
-}
-.wonka-button {
-border: 5px solid #fff;
-background-color: #ff00ff;
-color: black;
-font-weight: bold;
-padding: 1.5rem;
-font-size: 1.5rem;
-transition: all 0.2s ease-in-out;
-transform: scale(1) rotate(-1deg);
-}
-.wonka-button:hover {
-background-color: black;
-color: #ff00ff;
-transform: scale(1.05) rotate(0deg);
-box-shadow: 6px 6px 0px #ff00ff;
-}
-.stay-out {
-background-color: #444;
-color: #999;
-border: 5px dashed #999;
-cursor: not-allowed;
-}
-.stay-out:hover {
-transform: none;
-box-shadow: none;
-color: #aaa;
-}
-</style>
-</head>
-<body class="p-10">
-<div class="text-center mb-16">
-<h1 class="text-6xl wonka-font text-wonka-green drop-shadow-[4px_4px_0px_#ff00ff]">Golden Model Tickets</h1>
-<p class="text-2xl text-wonka-cyan mt-4">Select your runtime flavor below</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Peel Back the Curtain | Agentix Wizard Kernel</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="assets/images/logo.png" alt="AtomCorp Agentics Logo" class="logo" />
+      <h1 class="main-title">PEEL BACK THE CURTAIN</h1>
+      <p class="subtitle">
+        Each piece reveals a layer of truth hidden beneath. Click to uncover the world of Agentic Runtime Sovereignty.
+      </p>
+    </header>
 
+    <main class="puzzle-grid">
+      <!-- Navigation-style puzzle tiles -->
+      <div class="puzzle-piece" data-label="About Us" onclick="peel(this)">About Us</div>
+      <div class="puzzle-piece" data-label="Partnerships / Investors" onclick="peel(this)">Partnerships / Investors</div>
+      <div class="puzzle-piece" data-label="Agentic News" onclick="peel(this)">Agentic News</div>
+      <div class="puzzle-piece" data-label="Ethics" onclick="peel(this)">Ethics</div>
 
-<div class="grid md:grid-cols-4 gap-10 max-w-7xl mx-auto">
+      <!-- Runtime tickets -->
+      <div class="puzzle-piece ticket" data-label="BubblePop Mini-B3" onclick="peel(this)">BubblePop Mini-B3</div>
+      <div class="puzzle-piece ticket" data-label="Three Course Gumbo-7B" onclick="peel(this)">Three Course Gumbo-7B</div>
+      <div class="puzzle-piece ticket" data-label="Neverstopping Goblaster-14B" onclick="peel(this)">Neverstopping Goblaster-14B</div>
+      <div class="puzzle-piece ticket gate" data-label="Slugwell's Secrets" onclick="peelGate(this)">🪵</div>
+    </main>
 
+    <footer>
+      <p>
+        🧩 Peel them all to reveal the yellow brick road. We represent the Lollipop Kids now.
+      </p>
+    </footer>
 
-<!-- Entry-Level 3B Button -->
-<button class="wonka-button comic-border">
-BubblePop Mini-B3<br />
-<span class="text-sm block mt-2">Ultra-portable & cheeky. 128K burst mode.</span>
-</button>
-
-
-<!-- 7B Button -->
-<button class="wonka-button comic-border">
-Three Course Gumbo-7B<br />
-<span class="text-sm block mt-2">Multimodal. Multiverse. Neverstopping Goblaster.</span>
-</button>
-
-
-<!-- Custom Size Button -->
-<button class="wonka-button comic-border">
-Abacus Armadillo-14B<br />
-<span class="text-sm block mt-2">XL RAGs, llama.cpp, and Agentic Gloop 20B</span>
-</button>
-
-
-<!-- RAG Upgrade (Locked) -->
-<button class="wonka-button stay-out">
-Lifty Phizzer — Custom RAG Upgrade<br />
-<span class="text-sm block mt-2">🚫 Stay Out. This SKU requires deeper access.</span>
-</button>
-
-
-</div>
-</body>
+    <script src="assets/scripts.js"></script>
+  </body>
 </html>
